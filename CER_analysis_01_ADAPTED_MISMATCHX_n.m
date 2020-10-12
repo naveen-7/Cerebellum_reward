@@ -151,10 +151,6 @@ end
 % % end
 
 
-% THESE LINES ARE FOR MANUAL CORRECTION
-% offset=10;
-% diffdiff=A(offset+1:offset+size(B,1))-B;
-
 timeOffset=[]; % Rex-1000*Spike.  Time from 1000*Spike to Rex
 if sBig && offset < 0
     timeOffset=double(Trials(1-offset).Events(2).Time)-Trigg.times(1+start3)*1000;
@@ -411,27 +407,7 @@ for xx = 1:leng
                 end
             end
             
-% % %             if isempty(first_patcd)
-% % %                 
-% % %                 Trials(xx).obj.pattern = NaN;
-% % %                 Trials(xx).obj.xpos = NaN;
-% % %                 Trials(xx).obj.ypos = NaN;
-% % %                 Trials(xx).obj.red = NaN;
-% % %                 Trials(xx).obj.green = NaN;
-% % %                 Trials(xx).obj.blue = NaN;
-% % %                 
-% % %             end
-            
-            
-%             counter = first_patcd + 1; % because first code is 3000 (number of objects)
-% % %             for yy = 1:num_objs
-% % %                 Trials(xx).obj(yy).pattern = event_packet(counter,1) - 7000;
-% % %                 counter = counter + 1;
-% % %                 Trials(xx).obj(yy).xpos = (event_packet(counter,1) - 6000)/10;
-% % %                 counter = counter + 1;
-% % %                 Trials(xx).obj(yy).ypos = (event_packet(counter,1) - 6500)/10;
-% % %                 counter = counter + 1;
-% % %             end
+
 
             counter = find((event_packet(:,1)>7000)& (event_packet(:,1)<8000));
 
@@ -530,12 +506,7 @@ for xx = 1:leng
         
     end
     
-    % % % % % %
-    % % % % % %      if  isnan(Trials(xx).correct) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % % % % % %         Trials(xx).correct=1;     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % % % % % %         Trials(xx).MRT=1;         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % % % % % %     end                           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
+   
     
 end
 
@@ -551,9 +522,6 @@ end
 
 
 
-
-%% NOW MAKE ALL SORT AND SAVE
-%% find NAN array
 ar=[Trials.Array]';
 mrt=[Trials.MRT]';
 ptr=[Trials.pattern]';
@@ -597,118 +565,8 @@ for k = 1:length(allTrials)
 end
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% % %
-% % % % First find only completed correct trials
-% % % good_trials = search_for(Trials,1014); %%%%%%%%%%%%%%%%%%%% was 1012
-% % % good_trials = good_trials(:,1);
-% % %
-% % % rfon_trials = search_for(Trials,1007);
-% % % bad_trials=search_for(Trials,1013);
-% % % bar_release=search_for(Trials,1020);
-% % % abort_trial=search_for(Trials,1090);
-% % % fix_break=search_for(Trials,1091);
-% % %
-% % % Wrong_tri=[];
-% % % Good_tri=[];
-% % % if ~isempty(bad_trials)
-% % %     thiswrong=intersect(rfon_trials(:,1),bad_trials(:,1));
-% % %     tr=1;
-% % %     for c=1:length(thiswrong)
-% % %         if ~isempty(Trials(thiswrong(c)).MRT)
-% % %             wrong_bar(tr,1)=thiswrong(c);
-% % %             tr=tr+1;
-% % %         end
-% % %     end
-% % %
-% % %     %% in some trials MRT is empty even if the trialsd started
-% % %     %% clean the trials
-% % %     wrong_mrt= [Trials(wrong_bar).MRT]';
-% % %     bad_array=[Trials(wrong_bar).Array]';
-% % %     bad_trials_patterns=[Trials(wrong_bar).pattern]';
-% % %     Wrong_tri=[wrong_bar wrong_mrt bad_array bad_trials_patterns]; %%%%%%
-% % %     Wrong_tri(:,end+1)=2;
-% % % end
-% % %
-% % %
-% % %
-% % % % HERE i DO NOT PUT ANY CATOFF OF MANUAL REACTION TIMES
-% % % % TAKE ALL THE TRIALS, THE VERY SHORT AND THE VERY LONG.
-% % % % YOU CAN MAKE THE CUT OFF ANYTIME LATER
-% % % good_mrt= [Trials(good_trials).MRT]';
-% % % good_array=[Trials(good_trials).Array]';
-% % % good_trials_patterns=[Trials(good_trials).pattern]';
-% % %
-% % % Good_tri=[good_trials good_mrt good_array good_trials_patterns];  %%%%%%%
-% % % Good_tri(:,end+1)=1;
-% % % if ~isempty(Wrong_tri)
-% % %     all_trials=[Good_tri ;Wrong_tri];
-% % % else
-% % %     all_trials=  Good_tri;
-% % % end
-% % %
-% % %
-% % %
-% % %
-% % % clear all_sort;
-% % % all_sort=sortrows(all_trials,1);
-% % %
-% % % %% CREATE THE LIST OF TRIALS FOR EACH CONDITION
-% % % for t=1:size(all_sort,1)
-% % %     type_trials(t,1)=Trials(all_sort(t,1)).Array;
-% % %     type_trials(t,2)=Trials(all_sort(t,1)).obj(1).pattern;
-% % % end
-
-
-
-
-
-
 data_CH = data;
 shapes_CH = SHAPES;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
