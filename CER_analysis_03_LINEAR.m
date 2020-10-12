@@ -128,39 +128,39 @@ TEMP_infos = Infos; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-% DELTA_REVISED_n
+
 
 
 % % % ANALYSE_CS
 % % % 
-% % % %  CER_analysis_03f_LINEAR %%%% doing basic stuff like hands
-% % % %  CER_analysis_03a_LINEAR %%%% analyse the effect of learning in three trial conditions
+% % % %  CER_analysis_03f_LINEAR %%%% 
+% % % %  CER_analysis_03a_LINEAR %%%% 
 % % % 
 
-%    CER_analysis_03c_LINEAR  %%%% Memory Analysis: cuatro
-% %    CER_analysis_03c_LINEAR_rsm %%%% Memory Analysis: cuatro for symbol-reward interaction
-%    CER_analysis_03d_LINEAR  %%%% Memory Analysis: dos y dos
+%    CER_analysis_03c_LINEAR  %%%% 
+% %    CER_analysis_03c_LINEAR_rsm %%%% 
+%    CER_analysis_03d_LINEAR  %%%% 
 %    CW_DELTA_POP_crossvalidation
-% %  CER_analysis_03b_LINEAR %%%% Difference curing with learning
+% %  CER_analysis_03b_LINEAR %%%% 
 % % % % % 
-%   CER_analysis_03g_LINEAR  %%%% Stats for Memory based on delta
+%   CER_analysis_03g_LINEAR  %%%% 
 % % % % 
-% % % % %  CER_analysis_03h_LINEAR  %%%%% hand differences
+% % % % %  CER_analysis_03h_LINEAR  %%%%% 
 % % % % %  if ~strcmp(NOME(1),'P')
-% % % % %       CER_analysis_03j_LINEAR  %%%%% symbol differences
+% % % % %       CER_analysis_03j_LINEAR  %%%%% 
 % % % % %  end
 % % % % 
-% % % % %   CER_analysis_03e_LINEAR %%%%% State Change
-%   CER_analysis_03i_LINEAR %%%% State Change_trial_by_trial
-% % % %   CER_analysis_03k_LINEAR %%%% overtrained analysis
+% % % % %   CER_analysis_03e_LINEAR %%%%% 
+%   CER_analysis_03i_LINEAR %%%% 
+% % % %   CER_analysis_03k_LINEAR %%%% 
 % % % 
 % % % %   CER_analysis_03l_LINEAR
-% % % %   CER_analysis_03m_LINEAR %%%% Delta is a real thing!!!
-% % % CER_analysis_03m_LINEAR2 %%%% Delta is a real thing!!! part 2: for whole signal
+% % % %   CER_analysis_03m_LINEAR %%%% 
+% % % CER_analysis_03m_LINEAR2 %%%% 
 % % % 
-% % % % CER_analysis_03n_LINEAR %%%% ONLY delta epoch provides a cognitive error
+% % % % CER_analysis_03n_LINEAR %%%% 
 % % % 
-% % % %  CER_analysis_03o_LINEAR %%% basic behavior stuff
+% % % %  CER_analysis_03o_LINEAR %%% 
 
 % CER_analysis_03pp_LINEAR
 
