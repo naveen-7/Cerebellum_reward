@@ -152,9 +152,6 @@ if match==0
 end
 
 
-% THESE LINES ARE FOR MANUAL CORRECTION
-% offset=10;
-% diffdiff=A(offset+1:offset+size(B,1))-B;
 
 timeOffset=[]; % Rex-1000*Spike.  Time from 1000*Spike to Rex
 if sBig && offset < 0
@@ -595,9 +592,6 @@ end
 
 
 
-% HERE i DO NOT PUT ANY CATOFF OF MANUAL REACTION TIMES
-% TAKE ALL THE TRIALS, THE VERY SHORT AND THE VERY LONG.
-% YOU CAN MAKE THE CUT OFF ANYTIME LATER
 good_mrt= [Trials(good_trials).MRT]';
 good_array=[Trials(good_trials).Array]';
 good_trials_patterns=[Trials(good_trials).pattern]';
@@ -651,38 +645,7 @@ for xx=1:size(Wrong_tri,1)
 end
 
 
-%% divide two hands
 
-numbcod=length(dat(2).Units);
-%% elimina trials
-%  all_sort = all_sort(20:end,:)
-
-%% correct
-
-
-list1= all_sort(find(all_sort(:,5)==1),:);
-
-%% Wrong
-list2= all_sort(find(all_sort(:,5)==2),:);
-
-%% DIVIDE LEFT VS RIGHT HAND
-%% CORRECT and wrong insieme
-LH= list1(find(list1(:,3)==1),:);
-RH= list1(find(list1(:,3)==0),:);
-% %% WRONG
-
-WRH= list2(find(list2(:,3)==1),:); % dovrebbe rispondee con la sinistra ma risponde con la destra
-WLH= list2(find(list2(:,3)==0),:);% dovrebbe rispondee con la destra ma risponde con la sinistra
-%% prendi solo mano destra
-%%sortrows(all_trials,1);
-all_RH=[];
-all_RH=[RH ;WRH];
-all_RH=sortrows(all_RH,1);
-
-%%sortrows(all_trials,1);
-all_LH=[];
-all_LH=[LH ;WLH];
-all_LH=sortrows(all_LH,1);
 
 data_CH = data;
 shapes_CH = SHAPES;
